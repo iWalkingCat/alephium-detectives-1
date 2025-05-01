@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto 600px auto;
+    grid-template-rows: auto 600px auto;
+    grid-template-areas: 
+    ". . ."
+    ". main ."
+    "footer footer footer";
+
+    background-color: #e2fcdf;
+    background-image: url("https://www.transparenttextures.com/patterns/graphy-dark.png");
+}
+
+main {
+    grid-area: main;
+
+    background-image: url(./pictures/wine-cork.png);
+    background-color: #9e8a30;
+    border: 10px solid #a0653b;
+    border-radius: 3px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+
+.note {
+    background-color: #FFFACD;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    position: absolute;
+    font-family: 'Caveat', cursive;
+    font-size: 18px;
+}
+
+
+.note::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #ff4444 40%, #cc0000 60%);
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.note-text {
+    width: 220px;
+    height: 150px;
+    top: 90px;
+    left: 30px;
+    transform: rotate(-7deg);
+}
+
+.note-image {
+    width: 300px; 
+    height: 220px;
+    top: 300px; 
+    right: 130px;
+    transform: rotate(4deg);
+}
+
+.note-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+
+
+.note-code {
+    width: 200px; 
+    height: 200px;
+    top: 20px; 
+    right: 40px;
+    transform: rotate(3deg);
+}
+
+.note-code img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+}
+
+
+
+
+
+
+@media (max-width: 600px) {
+    body {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: auto 370px auto;
+        grid-template-rows: auto 740px auto;
+        grid-template-areas: 
+        ". . ."
+        ". main ."
+        "footer footer footer";
+    
+        background-color: #e2fcdf;
+        background-image: url("https://www.transparenttextures.com/patterns/graphy-dark.png");
+    }
+
+
+    .note-text {
+        font-size: 20px;
+        width: 200px;
+        height: 170px;
+        top: 255px;
+        left: 20px;
+        transform: rotate(-4deg);
+    }
+
+
+    .note-image {
+        width: 230px; 
+        height: 200px;
+        top: 460px; 
+        right: 30px;
+        transform: rotate(4deg);
+    }
+
+
+    .note-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+
+    .note-code {
+        width: 200px;
+        height: 200px;
+        top: 16px; 
+        right: 20px;
+        transform: rotate(3deg);
+    }
+
+    .note-code img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; 
+    }
+
+
+    .note::before {
+        width: 15px;
+        height: 15px;
+        top: -8px;
+    }
+}
+
+
+
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1); 
+    }
+    50% {
+        transform: scale(1.05); 
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+footer {
+    grid-area: footer;
+
+    display: flex;
+    justify-content: center;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 8px;
+    font-size: 22px;
+    color: #3d77e0;
+}
+
+.footer-text {
+    border: 1px solid #d3d3d3;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    animation: pulse 8s infinite ease-in-out;
+
+    width: max-content;
+    height: max-content;
+    background-color: #e2fcdf;
+    border-radius: 10px;
+    padding: 2px;
+}
